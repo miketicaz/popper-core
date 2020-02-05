@@ -31,14 +31,20 @@ jobs:
 
     - stage: Tests & Code Check
       name: '[Chromium] Functional Tests'
+      # We need to install Playwright with npm because of https://github.com/microsoft/playwright/issues/581
+      before_script: npm i playwright --no-save --no-lockfile
       script: JEST_BROWSER=chromium yarn test:functional
 
     - stage: Tests & Code Check
       name: '[Firefox] Functional Tests'
+      # We need to install Playwright with npm because of https://github.com/microsoft/playwright/issues/581
+      before_script: npm i playwright --no-save --no-lockfile
       script: JEST_BROWSER=firefox yarn test:functional
 
     - stage: Tests & Code Check
       name: '[WebKit] Functional Tests'
+      # We need to install Playwright with npm because of https://github.com/microsoft/playwright/issues/581
+      before_script: npm i playwright --no-save --no-lockfile
       script: JEST_BROWSER=webkit yarn test:functional
 
     - stage: Deploy
