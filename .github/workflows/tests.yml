@@ -1,0 +1,86 @@
+name: Unit Tests
+
+on: [push]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2-beta
+      - uses: CultureHQ/actions-yarn@master
+        with:
+          args: install
+      - name: Flow
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: test:flow
+      - name: ESLint
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: test:eslint
+      - name: TypeScript
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: build:typescript
+      - name: TypeScript
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: test:typescript
+
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2-beta
+      - uses: CultureHQ/actions-yarn@master
+        with:
+          args: install
+      - name: TypeScript
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: build:bundles
+      - name: Run Jest Unit Tests
+        uses: CultureHQ/actions-yarn@master
+        with:
+          args: test:unit
+
+  # functional-chromium:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2-beta
+  #     - uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: install
+  #     - name: Run Jest Functional Tests
+  #       uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: test:functional
+  #       env:
+  #         BROWSER: chromium
+
+  # functional-firefox:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2-beta
+  #     - uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: install
+  #     - name: Run Jest Functional Tests
+  #       uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: test:functional
+  #       env:
+  #         BROWSER: firefox
+
+  # functional-webkit:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2-beta
+  #     - uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: install
+  #     - name: Run Jest Functional Tests
+  #       uses: CultureHQ/actions-yarn@master
+  #       with:
+  #         args: test:functional
+  #       env:
+  #         BROWSER: webkit

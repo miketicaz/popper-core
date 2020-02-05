@@ -12,24 +12,6 @@ cache:
 jobs:
   include:
     - stage: Tests & Code Check
-      name: Flow Type
-      script: yarn test:flow
-
-    - stage: Tests & Code Check
-      name: ESLint
-      script: yarn test:eslint
-
-    - stage: Tests & Code Check
-      name: TypeScript
-      before_script: yarn build:typescript
-      script: yarn test:typescript
-
-    - stage: Tests & Code Check
-      name: Unit Tests
-      before_script: NODE_ENV=development yarn build:bundles
-      script: yarn test:unit
-
-    - stage: Tests & Code Check
       name: '[Chromium] Functional Tests'
       # We need to install Playwright with npm because of https://github.com/microsoft/playwright/issues/581
       before_script: npm i playwright --no-save --no-lockfile
