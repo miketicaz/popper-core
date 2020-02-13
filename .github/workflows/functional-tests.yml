@@ -1,0 +1,34 @@
+name: Functional Tests
+
+on: [push]
+
+jobs:
+  functional-chromium:
+    name: Chromium Functional Tests
+    runs-on: ubuntu-latest
+    container:
+      image: arjun27/playwright-bionic:0.1.0
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: yarn && BROWSER=chromium yarn test:functional
+
+  functional-firefox:
+    name: Firefox Functional Tests
+    runs-on: ubuntu-latest
+    container:
+      image: arjun27/playwright-bionic:0.1.0
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: yarn && BROWSER=firefox yarn test:functional
+
+  functional-webkit:
+    name: WebKit Functional Tests
+    runs-on: ubuntu-latest
+    container:
+      image: arjun27/playwright-bionic:0.1.0
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: yarn && BROWSER=webkit yarn test:functional
