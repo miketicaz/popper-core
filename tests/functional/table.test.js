@@ -2,7 +2,7 @@
  * @jest-environment jest-playwright-preset
  * @flow
  */
-import { screenshot, scroll } from '../utils/puppeteer.js';
+import { screenshot, scroll } from '../utils/playwright.js';
 
 it('should position popper on right when reference is in table', async () => {
   await page.goto(`${TEST_URL}/table/basic.html`);
