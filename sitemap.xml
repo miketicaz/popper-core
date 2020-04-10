@@ -9,6 +9,7 @@
 <url> <loc>https://popper.js.org/docs/v2/migration-guide/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://popper.js.org/docs/v2/modifiers/apply-styles/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://popper.js.org/docs/v2/modifiers/arrow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://popper.js.org/docs/v2/modifiers/community-modifiers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://popper.js.org/docs/v2/modifiers/compute-styles/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://popper.js.org/docs/v2/modifiers/event-listeners/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://popper.js.org/docs/v2/modifiers/flip/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
